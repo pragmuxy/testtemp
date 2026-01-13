@@ -1,0 +1,28 @@
+# [attr]heavy: Mark a file for LFS tracking, disable diffs, and skip delta compression
+[attr]heavy   filter=lfs diff=lfs merge=lfs -text -delta
+
+# [attr]code: Force LF, enable syntax-aware diffing, and standard text handling
+[attr]code    text eol=lf diff
+
+
+*.txt     filter=lfs diff=lfs merge=lfs -text
+*     filter=lfs diff=lfs merge=lfs -text
+*.py  linguist-language=python
+
+docs/api-reference.html  linguist-generated
+search/index.json        linguist-generated
+
+config/app.yaml conflict-marker-size=32
+
+# Apply our 'heavy' macro to all assets in the 'raw' folder
+assets/raw/**  heavy
+
+# Apply our 'code' macro to all source files
+src/**/*.go    code
+src/**/*.py    code
+
+# Delta compression: disable for large files that aren't LFS but change often
+# to keep the local .git folder from ballooning in size
+*.database     -delta
+
+README.custom linguist-documentation
